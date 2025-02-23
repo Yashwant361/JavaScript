@@ -1,0 +1,45 @@
+/* #btn {
+    position:absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    border-radius: 15px;
+} */
+/* #controlPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+} */
+
+/* #randomColor, #btn {
+    position: absolute;
+    top: 0;
+    right: 100px; /* Adjust this value to position the dropdown appropriately */
+    /* padding: 10px;
+    border-radius: 5px; 
+} */
+
+
+#btn {
+    border-radius: 15px;
+} */
+
+ #controlPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+}
+
+#btn, #colorSelect {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#btn {
+    border-radius: 15px;
+}
+
+
