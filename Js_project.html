@@ -1,0 +1,40 @@
+<!-- JavaScript Can Change HTML Content
+    
+One of many JavaScript HTML methods is getElementById().
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visulization</title>
+</head>
+
+<body>
+    <h2>What can JavaScript Do?</h2>
+    <!-- <p id="demo">JavaScript can change HTML content.</p>
+
+    <button type="button" onclick='document.getElementById("demo").innerHTML="Hello Js"'> Click Me!</button> -->
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+   <!-- <img id="myImage" src="/JavaScript/pic_bulbon.gif"  style="width: 100px;"> -->
+   <!-- <img src="/JavaScript/pic_bulboff.gif" alt="" id="Myimage" style="width: 100px;"> -->
+
+    <button type="button" onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the Bulb</button>
+    <img id="myImage" src="/JavaScript/pic_bulbon.gif"  style="width: 100px;">
+    <button type="button" onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn on the Bulb</button>
+
+
+
+</body>
+
+</html>
+
+<!-- to : https://www.w3schools.com/js/pic_bulboff.gif
+
+https://www.w3schools.com/js/pic_bulbon.gif -->
