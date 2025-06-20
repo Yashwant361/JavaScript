@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handler to the window Object</title>
+</head>
+
+<body style="text-align: center; color: blue; font-size: 20px; background-color: yellow; padding: 10px;">
+    <h2>JavaScript addEventListener()</h2>
+
+    <p>This example uses the addEventListener() method on the window object.</p>
+
+    <p>Try resizing this browser window to trigger the "resize" event handler.</p>
+
+    <p id="showResult"></p>
+</body>
+
+<script>
+    //step1 : Attach an event listener to the window object for the "resize" event
+    const X = window.addEventListener("resize", () => {
+
+        // When the window is resized, update the innerHTML of the "demo" element with a random number
+
+        document.getElementById('showResult').innerHTML = Math.random();
+    });
+</script>
+
+</html>

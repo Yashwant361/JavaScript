@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Js</title>
+</head>
+<style>
+    .bg-color {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 50px;
+    }
+</style>
+
+<body class="bg-color">
+    <!-- <form action="">
+        <input type="range" id = "colorName" placeholder="Color Name">
+        <input type="submit" value="change color" id = "submit">
+    </form> -->
+
+    <!-- <button onclick="console.log('Hello Sir')" id="btn">Click Me</button> -->
+    <p>Learning AddEventListener</p>
+    <button id="btn">Click Me</button>
+
+    <!-- <h1>Count Game</h1>
+    <button id="countBtn">Click Me!</button>
+    <p> Count : <span id="counter">0</span></p> -->
+
+
+</body>
+<script>
+
+    // Step1 : Initialize counter variable 
+    const btn1 = document.getElementById('btn');
+    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+    const message = ["Background Change  to Red",
+        "Background Change to Green",
+        "Background Change to  Blue",
+        "Background Change Yellow",
+        "Background Change Purple",
+        "Background Change Orange"];
+    let currentColorIndex = 0;
+
+    //Step2 : Add click event listener to the button
+    btn1.addEventListener('click', () => {
+
+        {
+            // Change the background color of the body
+            document.body.style.backgroundColor = colors[currentColorIndex];
+
+            // Log message corresponding to the current color
+            console.log(message[currentColorIndex]);
+
+            //Move to the next color, loop back if at the end
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+
+    });
+
+
+
+    // // Initialize counter variable 
+    // let count = 0;
+
+    // //Get reference to button and display span
+
+    // const button = document.getElementById('countBtn');
+    // const display = document.getElementById('counter');
+    // const Celebration = document.getElementById('celebrationMessage')
+
+    // //Add click event listener to the button
+    // button.addEventListener('click', () => {
+    //     count++;
+    //     display.textContent = count;
+
+    // });
+
+
+
+</script>
+
+</html>
+
+<!-- ✅ Basic Syntax:
+javascript
+
+element.addEventListener(eventType, callbackFunction);
+Part	                  Meaning
+-------------------------------------------
+element	             DOM element you want to listen to (like a button)
+eventType	         Type of event in quotes ('click', 'mouseover', etc.)
+callbackFunction     Function that will run when event happens 
+-->

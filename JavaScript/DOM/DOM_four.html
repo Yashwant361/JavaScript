@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Alert</title>
+    <style>
+        .bg-color{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-color">
+      <h2>Js addEventListener to show Alert</h2>
+    <p>This example uses the addEventListener() methods to show Alert Message while user click on button </p>
+
+    <button id="myBtn"> Click for Alert</button>
+   
+</body>
+<script>
+    // step1 : Initialze the variable
+    const myBtn1 = document.getElementById('myBtn');
+    
+    //Add Click EventListener to button
+
+    addEventListener('click',() => {
+        const message = 'Button was Click!';
+
+        //show alert
+        alert(message);
+
+        //print on console
+        console.log(message);
+
+     
+
+    })
+
+</script>
+</html>

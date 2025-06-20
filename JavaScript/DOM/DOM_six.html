@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handle different Events</title>
+</head>
+<body style="text-align: center;">
+  <h2>Js addEventListener to show Diiffernt Alerts</h2>
+  <p>This example uses the addEventListener() method to add many events on the same button.</p>
+  <button id="myBtn">Click here</button>
+ 
+  <p id="showResult"></p>
+</body>
+
+<script>
+  const x = document.getElementById("myBtn");
+  const showResult = document.getElementById("showResult");
+
+  // Using arrow functions for event handlers
+  x.addEventListener("mouseover", () => {
+    showResult.innerHTML += "Moused over!<br>";
+  });
+  
+  x.addEventListener("click", () => {
+    showResult.innerHTML += "Clicked!<br>";
+  });
+  
+  x.addEventListener("mouseout", () => {
+    showResult.innerHTML += "Moused out!<br>";
+  });
+</script>
+</html>

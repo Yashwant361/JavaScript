@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Parameters</title>
+</head>
+<body style="text-align: center; color: blue; font-size: 20px; background-color: rgb(183, 183, 56); padding: 10px;">
+ 
+    <h2>JavaScript addEventListener()</h2>
+    <p>This example demonstrates how to pass parameter values when using the addEventListener() method.</p>
+    <p>Click the button to perform a calculation.</p>
+    <button id="myBtn">Calculate</button>
+    <p><textarea name="" id="res" style="resize: none;" placeholder="Result"></textarea></p>
+
+</body>
+<script>
+
+let p1 = 4;
+let p2 = 3;
+
+const X = document.getElementById('myBtn');
+// addEventListener('click', function() {
+//         myfunction(p1,p2);
+// });
+
+// function myfunction(a,b){
+//     document.getElementById('res').innerHTML = a * b;
+// }
+
+addEventListener('click',()=>{
+    // Call myFunction with parameters p1 and p2 when button is clicked
+    myFunction(p1, p2);
+});
+function myFunction(a,b){
+    document.getElementById('res').innerHTML = `Result: ${a} * ${b} = ${a * b}`;
+};
+
+
+
+</script>
+</html>
