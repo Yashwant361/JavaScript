@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove EventListener</title>
+</head>
+<style>
+    h2 {
+        text-align: center;
+    }
+
+    #myDIV {
+        background-color: coral;
+        border: 1px solid;
+        padding: 50px;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <h2>JavaScript removeEventListener()</h2>
+    <div id="myDIV">
+        <p>This div element has an onmousemove event handler that displays a random number every time you move your
+            mouse inside this orange field.</p>
+        <p>Click the button to remove the div's event handler.</p>
+        <button onclick="removeHandler()" id="myBtn">Remove</button>
+    </div>
+    <p id="demo"></p>
+</body>
+<script>
+  // Define the arrow function separately so it can be referenced later
+  const myArrowFunction = () => {
+    document.getElementById("demo").innerHTML = Math.random();
+  };
+
+  // Add the event listener with the arrow function
+  document.getElementById("myDIV").addEventListener("mousemove", myArrowFunction);
+
+  // Function to remove the event listener
+  function removeHandler() {
+    document.getElementById("myDIV").removeEventListener("mousemove", myArrowFunction);
+  }
+</script>
+</html>
