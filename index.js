@@ -1,63 +1,75 @@
+const ticTac = document.querySelector('.ticTac');
+const boxes = document.querySelectorAll('.box');
+const h1 = document.getElementsByTagName('h1');
+const rBtn = document.getElementById('rstbtn');
+console.log(h1);
 
-const btn = document.getElementById('genPass');
-const newPass = document.getElementById('newPass');
-const slider = document.getElementById('range');
-const rangeVal = document.getElementById('rangeVal');
-rangeVal.innerText = slider.value;
+let currentPlayer = 'X';
+let count = 0;
 
-const upperCase = document.getElementById('capLet');
-const lowerCase = document.getElementById('samLet');
-const numberBox = document.getElementById('number');
-const symbol = document.getElementById('symbol');
-const copyBtn = document.getElementById('copyBtn');
+// Winner Conditions
 
+const winningCondition = [
+    [0, 1, 2], // top row
+    [3, 4, 5], // middle row
+    [6, 7, 8], // bottom row
+    [0, 3, 6], // left column
+    [1, 4, 7], // middle column
+    [2, 5, 8], // right column
+    [0, 4, 8], // diagonal
+    [2, 4, 6]  // other diagonal
+];
 
-slider.addEventListener('input', (event) => {
-    rangeVal.innerText = event.target.value;
+function eventStart(event) {
+
+    if (event.target.className !== 'ticTac') {
+
+        if (event.target.innerText === '') {
+            event.target.textContent = currentPlayer;
+            winner();
+            currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+        }
+        if (count === 9) {
+            h1[0].innerText = 'Match Draw';
+        }
+    }
+}
+function gameStart() {
+    ticTac.addEventListener('click', eventStart);
+}
+
+function winner() {
+    winningCondition.forEach((item => {
+        let val0 = boxes[item[0]].innerText;
+        let val1 = boxes[item[1]].innerText;
+        let val2 = boxes[item[2]].innerText;
+        console.log(item[0], val0, item[1], val1, item[3], val2);
+
+        if (val0 !== '' && val1 !== '' && val2 !== '') {
+            console.log('1st Check');
+            if (val0 === val1 && val0 === val2) {
+                console.log("final Check");
+                boxes[item[0]].classList.add('WinnerClass');
+                boxes[item[1]].classList.add('WinnerClass');
+                boxes[item[2]].classList.add('WinnerClass');
+                count = 0;
+                h1[0].innerText = `Winner is ${val1}`;
+                ticTac.removeEventListener('Click', eventStart);
+            }
+        }
+
+    }));
+
+}
+
+rBtn.addEventListener('click', () => {
+    currentPlayer = 'X';
+    h1[0].innerText = 'Tic Tac Toc';
+    boxes.forEach((item) => {
+        item.classList.remove('WinnerClass');
+        item.innerText = '';
+    });
+    gameStart();
 });
 
-btn.addEventListener('click', () => {
-
-    let captialLetter = 'ABCDEFGHJKLMNOPQRSTUVWXYZ';
-    let smallLetter = 'abcdefghijklmnopqrstuvwxyz';
-    let numberStr = '0123456789';
-    let symbolsStr = `~!@#$%^&*()_-+={[}]|\\:;",\`<,>.?/`;
-
-   let finalStr = '';
-   
-    if(upperCase.checked){
-       finalStr += captialLetter;
-    }
-    if(lowerCase.checked){
-       finalStr += smallLetter;
-    }
-    if(numberBox.checked){
-       finalStr += numberStr;
-    }
-    if(symbol.checked){
-       finalStr += symbolsStr;
-    }
-    if (finalStr === "") {
-        alert("Please Select atleast one option");
-        return; // Added to stop execution
-    }
-    
-    let lastestPass ='';
-
-    for(let i = 0 ; i < slider.value ; i++){
-        let randNum = Math.floor(Math.random() * finalStr.length);
-       lastestPass += finalStr.charAt(randNum);
-    }
- 
-     newPass.innerText = `${lastestPass}`;
-
-});
-     copyBtn.addEventListener('click',() => {
-      if(!newPass.innerText){
-         alert("No PassWord to Copy");
-           return;
-      }
-   
-     window.navigator.clipboard.writeText(newPass.innerText);
-     alert("PassWord Copied")
-   },true);
+gameStart();
