@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Timing Events</title>
+    <link rel="stylesheet" href="Events.css">
+</head>
+<body style="background-color: black; color: white;text-align: center;">
+    <h2>JavaScript Timing Events</h2>
+    <p>Timing Events
+The window object allows execution of code at specified time intervals. <br>
+
+These time intervals are called timing events. <br>
+
+The two key methods to use with JavaScript are: <br>
+
+setTimeout(function, milliseconds)
+Executes a function, after waiting a specified number of milliseconds. <br>
+
+setInterval(function, milliseconds)
+Same as setTimeout(), but repeats the execution of the function continuously. <br>
+The setTimeout( ) and setInterval( ) are both methods of the HTML DOM Window object.</p>
+
+<p style="color: red;">------------------------------------------------------------------------Example - 1 -------------------------------------------------------------</p>
+
+<h2>The setTimeout ( ) Method
+window.setTimeout(function, milliseconds);</h2>
+<p>The window.setTimeout( ) method can be written without the window prefix. <br>
+
+The first parameter is a function to be executed. <br>
+
+The second parameter indicates the number of milliseconds before execution.</p>
+<p style="color: darkcyan">Example</p>
+<p id="message">Click "Try it". Wait 3 seconds, and the page will alert "Hello".</p>
+<button id="btn" >Click to See Above Result 👆</button>
+
+<p style="color: red;">------------------------------------------------------------------------Example - 2 -------------------------------------------------------------</p>
+
+<h2>How to Stop the Execution?</h2>
+<p><span style="color: orange">The clearTimeout() </span>method stops the execution of the function specified in setTimeout(). <br>
+
+<span style=" display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color: #1a1a1a; color: white;">window.clearTimeout(timeoutVariable) </span> <br>
+
+The <span style="color: orange">window.clearTimeout()</span> method can be written without the window prefix.
+The <span style="color: orange">clearTimeout()</span> method uses the variable returned from setTimeout():</p>
+<span style="display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color: #1a1a1a; color: white;"> myVar = setTimeout(function, milliseconds);  <br>
+clearTimeout(myVar);</span>
+<p>If the function has not already been executed, you can stop the execution by calling the clearTimeout() method:</p>
+
+<p style="color: darkcyan">Example : Same example as above, but with an added "Stop" button:</p>
+
+<div style="display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color:white ; color:  #1a1a1a; ">
+<h2>JavaScript Timing</h2>
+<p>Click "Try it". Wait 3 seconds. The page will alert "Hello".</p>
+<p>Click "Stop" to prevent the first function to execute.</p>
+<p>(You must click "Stop" before the 3 seconds are up.)</p>
+
+<button id="Trybtn" >Try it</button>
+<button id="Stopbtn" >Stop It</button>
+</div>
+
+<p style="color: red;">------------------------------------------------------------------------Example - 3 -------------------------------------------------------------</p>
+
+<h2>The setInterval ( ) Method</h2>
+<p> The<span style="color: orange"> setInterval( ) </span> method repeats a given function at every given time-interval. <br>
+
+<span style=" display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color: #1a1a1a; color: white;">window.clearTimeout(timeoutVariable) </span> <br>
+
+The <span style="color: orange">window.setInterval( )</span> method can be written without the window prefix.
+<p>The first parameter is the function to be executed. <br>
+The second parameter indicates the length of the time-interval between each execution. <br>
+This example executes a function called "myTimer" once every second (like a digital watch).</p>
+
+<p style="color: darkcyan">Example : Display the current time:</p>
+
+<div style="display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color:white ; color:  #1a1a1a; ">
+<h2>JavaScript Timing</h2>
+
+<p>A script on this page starts this clock:</p>
+
+<p id="demo"></p>
+
+</div>
+
+<p style="color: red;">------------------------------------------------------------------------Example - 4 -------------------------------------------------------------</p>
+
+<h2>How to Stop the Execution?</h2>
+<p> The<span style="color: orange"> clearInterval( ) </span> method stops the executions of the function specified in the setInterval( ) method. <br>
+
+<span style=" display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color: #1a1a1a; color: white;">window.clearInterval(timerVariable) </span> <br>
+
+The <span style="color: orange">window.clearInterval( )</span> method can be written without the window prefix.
+The <span style="color: orange">clearInterval( )</span> method uses the variable returned from <span style="color: orange">setInterval( )</span> <br>
+
+<span style=" display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color: #1a1a1a; color: white;">let myVar = setInterval(function, milliseconds); <br>
+clearInterval(myVar); </span> <br>
+
+
+
+
+<p style="color: darkcyan">Example :Same example as above, but we have added a "Stop time" button:</p>
+
+<div style="display: inline-block;padding: 10px 20px;border: 2px solid #00ffcc; border-radius: 8px; background-color:white ; color:  #1a1a1a; ">
+<h2>JavaScript Timing</h2>
+
+<p>A script on this page starts this clock:</p>
+
+<p id="Demo"></p>
+
+<button id ="stopBtn">Stop Time</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="Events.js"></script>
+</body>
+</html>
